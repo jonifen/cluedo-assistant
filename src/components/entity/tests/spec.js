@@ -14,4 +14,15 @@ describe('<Entity />', () => {
     const { getByTestId } = render(<Entity />);
     expect(getByTestId('entity')).toBeInTheDocument();
   });
+
+  it('should render an image if provided with valid props', () => {
+    const entityDetails = {
+      entity: 'colonel-mustard',
+      name: 'Col. Mustard',
+      category: 'suspect'
+    };
+    const { getByTestId, container } = render(<Entity {...entityDetails} />);
+    const imageElement = getByTestId('entity-image');
+    expect(container).toContainElement(imageElement);
+  });
 });
