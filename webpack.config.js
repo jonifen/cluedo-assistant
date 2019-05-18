@@ -1,8 +1,9 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'js/cluedo-assistant.js'
@@ -22,6 +23,12 @@ module.exports = {
         filename: 'index.html',
         template: 'templates/index.ejs'
       }
-    )
+    ),
+    new CopyWebpackPlugin([
+      {
+        from: './src/img',
+        to: 'img'
+      }
+    ])
   ]
 };
