@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Entities from '../../entities-config';
+import getAllEntities from '../../repositories/entities-repository';
 import Entity from '../entity/index';
 
 function GameBoard() {
-  const [entities, setEntities] = useState(Entities);
+  const [entities, setEntities] = useState(getAllEntities());
 
   return (
     <div data-testid="game-board">

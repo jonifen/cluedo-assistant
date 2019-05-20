@@ -28,8 +28,8 @@ const rooms = [
   { "entity":"study", "name":"Study", "category":"room" }
 ]
 
-export default [
-  ...suspects,
-  ...weapons,
-  ...rooms
-];
+export default {
+  suspects,
+  weapons,
+  rooms
+};
