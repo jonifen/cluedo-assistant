@@ -4,12 +4,22 @@ import Entity from '../entity/index';
 
 function GameBoard() {
   const [entities, setEntities] = useState(getAllEntities());
+  const [selectedEntities, setSelectedEntities] = useState([]);
+
+  function onEntityClick(entityName) {
+    if (!selectedEntities[entityName])
+      selectedEntities[entityName] = false;
+
+    selectedEntities[entityName] = !selectedEntities[entityName];
+    setSelectedEntities(selectedEntities);
+    console.log(`Entity '${entityName}' clicked`, selectedEntities);
+  }
 
   return (
     <div data-testid="game-board">
     {
       entities.map(entity => {
-        return <Entity key={entity.entity} {...entity} />
+        return <Entity key={entity.entity} {...entity} currentSelectedState={selectedEntities[entity.entity]} onClickEvent={onEntityClick} />
       })
     }
     </div>
