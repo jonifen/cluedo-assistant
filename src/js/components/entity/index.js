@@ -1,17 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 function Entity({entity, name, category, currentSelectedState, onClickEvent}) {
+  const [selected, setSelected] = useState(currentSelectedState);
+
   function onEntityClick(e) {
+    setSelected(!selected);
     onClickEvent(entity);
   }
-
-  const [selected, setSelected] = useState(false);
-
-  useEffect(() => {
-    console.log(`use effect! ${entity} : ${currentSelectedState}`);
-    if (currentSelectedState != selected)
-      setSelected(currentSelectedState);
-  }, []);
 
   let entityImage = null;
   if (entity) {

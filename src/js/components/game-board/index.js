@@ -12,7 +12,6 @@ function GameBoard() {
 
     selectedEntities[entityName] = !selectedEntities[entityName];
     setSelectedEntities(selectedEntities);
-    console.log(`Entity '${entityName}' clicked`, selectedEntities);
   }
 
   return (
