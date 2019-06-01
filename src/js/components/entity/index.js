@@ -10,7 +10,7 @@ function Entity({entity, name, category, currentSelectedState, onClickEvent}) {
 
   let entityImage = null;
   if (entity) {
-    const imgUrl = `/img/${entity}.png`;
+    const imgUrl = `./img/${entity}.png`;
     entityImage = <img src={imgUrl} data-testid="entity-image" />
   }
 
