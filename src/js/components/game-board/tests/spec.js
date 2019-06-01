@@ -16,6 +16,14 @@ describe('<GameBoard />', () => {
     render(<GameBoard />);
   });
 
+  it('Should include a comments textarea once rendered', () => {
+    getAllEntities.mockImplementation(() => {
+      return [{ "entity":"colonel-mustard", "name":"Col. Mustard", "category":"suspect" }];
+    });
+    const { getByTestId } = render(<GameBoard />);
+    expect(getByTestId('comments')).toBeInTheDocument();
+  });
+
   it('should render 1 entity when the Entities file contains 1 item', () => {
     getAllEntities.mockImplementation(() => {
       return [{ "entity":"colonel-mustard", "name":"Col. Mustard", "category":"suspect" }];
