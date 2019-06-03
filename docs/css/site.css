@@ -1,0 +1,47 @@
+body {
+  font-family: sans-serif;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.entity {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+
+.entity.selected .cover {
+  background: rgba(0,0,0,0.8);
+  border-radius: 8px;
+}
+.entity.selected .cover::after {
+  content: "✔\fe0e";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 70px; height: 70px;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-size: 60px;
+  line-height: 80px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+/* Comments */
+.commentsSection {
+  margin-right: 10px;
+}
+.commentsSection textarea.comments {
+  resize: none;
+  width: 100%;
+  border: #333 solid 1px;
+}
