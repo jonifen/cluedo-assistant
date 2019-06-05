@@ -3,7 +3,7 @@ import getAllEntities from '../../repositories/entities-repository';
 import Entity from '../entity/index';
 
 function GameBoard() {
-  const [entities, setEntities] = useState(getAllEntities());
+  const entities = getAllEntities();
   const [selectedEntities, setSelectedEntities] = useState([]);
 
   function onEntityClick(entityName) {
