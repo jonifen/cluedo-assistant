@@ -1,9 +1,14 @@
 import React from 'react';
 
-function SectionHeader({children, onClickEvent}) {
+function SectionHeader({ headingText, onClickEvent }) {
+  function onClickHeader(e) {
+    if (onClickEvent)
+      onClickEvent(e);
+  }
+
   return (
-    <div data-testid="accordion-section-header" onClick={onClickEvent}>
-      { children }
+    <div data-testid="accordion-section-header" onClick={onClickHeader}>
+      {headingText}
     </div>
   );
 }

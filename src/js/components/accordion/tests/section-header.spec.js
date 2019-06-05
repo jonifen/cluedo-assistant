@@ -17,11 +17,9 @@ describe('<SectionHeader />', () => {
 
   it('should include the text "hello" in the component after render', () => {
     const { getByTestId } = render(
-      <SectionHeader>
-        <h2 data-testid="accordion-section-header-h2">hello</h2>
-      </SectionHeader>
+      <SectionHeader headingText="hello" />
     );
-    const headingElement = getByTestId('accordion-section-header-h2');
+    const headingElement = getByTestId('accordion-section-header');
     expect(headingElement).toBeInTheDocument();
     expect(headingElement).toHaveTextContent('hello');
   });
@@ -29,9 +27,7 @@ describe('<SectionHeader />', () => {
   it('should run the onClickEvent function when clicked', () => {
     const onClickEvent = jest.fn();
     const { getByTestId } = render(
-      <SectionHeader onClickEvent={onClickEvent}>
-        <p>random text</p>
-      </SectionHeader>
+      <SectionHeader headingText="hello" onClickEvent={onClickEvent} />
     );
     const sectionHeaderElement = getByTestId('accordion-section-header');
     fireEvent.click(sectionHeaderElement);

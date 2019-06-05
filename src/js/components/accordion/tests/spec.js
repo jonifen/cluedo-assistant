@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import Accordion from '../index';
 import 'jest-dom/extend-expect';
 
@@ -22,5 +22,14 @@ describe('<Accordion />', () => {
       </Accordion>
     );
     expect(getByTestId('child-element')).toBeInTheDocument();
-  })
+  });
+
+  it('should include a SectionHeader after render', () => {
+    const { getByTestId } = render(
+      <Accordion headingText='Heading' />
+    );
+    const sectionHeader = getByTestId('accordion-section-header');
+    expect(sectionHeader).toBeInTheDocument();
+    expect(sectionHeader).toHaveTextContent('Heading');
+  });
 });
