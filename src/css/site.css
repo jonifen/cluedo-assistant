@@ -39,9 +39,22 @@ body {
 /* Comments */
 .commentsSection {
   margin-right: 10px;
+  padding: 0.5rem 0 0 0;
 }
 .commentsSection textarea.comments {
   resize: none;
   width: 100%;
   border: #333 solid 1px;
+}
+
+/* Accordion */
+.sectionHeader {
+  cursor: pointer;
+  height: 3rem;
+  line-height: 3rem;
+  font-weight: bold;
+  background-color: #636799;
+  color: #fff;
+  padding: 0 0 0 0.5rem;
+  margin-top: 0.5rem;
 }

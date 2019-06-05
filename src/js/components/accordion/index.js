@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SectionHeader from './section-header';
 
 function Accordion({ headingText, children }) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   function onClickEvent(e) {
     setIsVisible(!isVisible);
   }
@@ -10,7 +10,9 @@ function Accordion({ headingText, children }) {
   return (
     <div data-testid="accordion">
       <SectionHeader headingText={headingText} onClickEvent={onClickEvent} />
-      {children}
+      {
+        isVisible ? <div>{children}</div> : null
+      }
     </div>
   );
 }

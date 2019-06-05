@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import getAllEntities from '../../repositories/entities-repository';
 import Entity from '../entity/index';
+import Accordion from '../accordion/index';
 
 function GameBoard() {
   const entities = getAllEntities();
@@ -16,17 +17,18 @@ function GameBoard() {
 
   return (
     <div data-testid="game-board">
-      <div>
+      <Accordion headingText="Entities">
       {
         entities.map(entity => {
           return <Entity key={entity.entity} {...entity} currentSelectedState={selectedEntities[entity.entity]} onClickEvent={onEntityClick} />
         })
       }
-      </div>
-      <div className="commentsSection">
-        <h3>Comments:</h3>
-        <textarea name="comments" className="comments" rows="8" data-testid="comments"></textarea>
-      </div>
+      </Accordion>
+      <Accordion headingText="Comments">
+        <div className="commentsSection">
+          <textarea name="comments" className="comments" rows="8" data-testid="comments"></textarea>
+        </div>
+      </Accordion>
     </div>
   );
 }

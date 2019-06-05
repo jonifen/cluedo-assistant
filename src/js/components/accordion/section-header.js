@@ -7,7 +7,7 @@ function SectionHeader({ headingText, onClickEvent }) {
   }
 
   return (
-    <div data-testid="accordion-section-header" onClick={onClickHeader}>
+    <div className="sectionHeader" data-testid="accordion-section-header" onClick={onClickHeader}>
       {headingText}
     </div>
   );
