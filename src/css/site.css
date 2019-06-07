@@ -36,6 +36,24 @@ body {
   border-radius: 50%;
 }
 
+.entity.suspected .cover {
+  background: rgba(38, 66, 38, 0.8);
+  border-radius: 8px;
+}
+.entity.suspected .cover::after {
+  content: "?";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 70px; height: 70px;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-size: 60px;
+  line-height: 80px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
 /* Comments */
 .commentsSection {
   margin-right: 10px;

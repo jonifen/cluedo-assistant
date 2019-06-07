@@ -35,7 +35,7 @@ describe('<Entity />', () => {
     expect(entityElement).toHaveClass('entity', 'selected');
   });
 
-  it('should update the entity to be not selected if clicked twice', () => {
+  it('should update the entity to be suspected if clicked twice', () => {
     const onEntityClick = (e) => {};
     const { getByTestId } = render(<Entity {...entityDetails} currentSelectedState={false} onClickEvent={onEntityClick} />);
     const entityElement = getByTestId('entity');
@@ -43,5 +43,18 @@ describe('<Entity />', () => {
     fireEvent.click(entityElement);
     expect(entityElement).toHaveClass('entity');
     expect(entityElement).not.toHaveClass('selected');
+    expect(entityElement).toHaveClass('suspected');
+  });
+
+  it('should update the entity to be not selected if clicked thrice', () => {
+    const onEntityClick = (e) => {};
+    const { getByTestId } = render(<Entity {...entityDetails} currentSelectedState={false} onClickEvent={onEntityClick} />);
+    const entityElement = getByTestId('entity');
+    fireEvent.click(entityElement);
+    fireEvent.click(entityElement);
+    fireEvent.click(entityElement);
+    expect(entityElement).toHaveClass('entity');
+    expect(entityElement).not.toHaveClass('selected');
+    expect(entityElement).not.toHaveClass('suspected');
   });
 });

@@ -1,10 +1,16 @@
 import React, {useState} from 'react';
 
 function Entity({entity, name, category, currentSelectedState, onClickEvent}) {
-  const [selected, setSelected] = useState(currentSelectedState);
+  const [currentState, setCurrentState] = useState("none");
 
   function onEntityClick(e) {
-    setSelected(!selected);
+    const nextStates = {
+      "none": "selected",
+      "selected": "suspected",
+      "suspected": "none"
+    };
+
+    setCurrentState(nextStates[currentState]);
     onClickEvent(entity);
   }
 
@@ -14,7 +20,7 @@ function Entity({entity, name, category, currentSelectedState, onClickEvent}) {
     entityImage = <img src={imgUrl} data-testid="entity-image" />
   }
 
-  let entityClassName = selected ? "entity selected" : "entity";
+  let entityClassName = `entity ${currentState}`;
 
   return (
     <div className={entityClassName} data-testid="entity" onClick={onEntityClick}>
