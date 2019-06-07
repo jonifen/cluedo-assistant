@@ -7,12 +7,14 @@ function Accordion({ headingText, children }) {
     setIsVisible(!isVisible);
   }
 
+  const visibilityClassName = isVisible ? "" : "hidden";
+
   return (
     <div data-testid="accordion">
       <SectionHeader headingText={headingText} onClickEvent={onClickEvent} />
-      {
-        isVisible ? <div>{children}</div> : null
-      }
+        <div className={visibilityClassName}>
+          {children}
+        </div>
     </div>
   );
 }

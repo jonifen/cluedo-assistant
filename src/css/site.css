@@ -76,3 +76,7 @@ body {
   padding: 0 0 0 0.5rem;
   margin-top: 0.5rem;
 }
+
+.hidden {
+  display: none;
+}
