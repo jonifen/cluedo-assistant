@@ -1,7 +1,7 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from 'react-testing-library';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import Entity from '../index';
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('<Entity />', () => {
   afterEach(cleanup);

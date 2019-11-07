@@ -1,7 +1,7 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from 'react-testing-library';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import SectionHeader from '../section-header';
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 
 describe('<SectionHeader />', () => {
   afterEach(cleanup);
