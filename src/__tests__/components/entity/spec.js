@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
-import Entity from '../index';
+import Entity from '../../../js/components/entity/index';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('<Entity />', () => {

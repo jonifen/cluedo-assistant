@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import Section from '../section.js';
+import Section from '../../../js/components/accordion/section';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('<Section />', () => {

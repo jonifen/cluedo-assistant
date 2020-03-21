@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import Accordion from '../index';
+import Accordion from '../../../js/components/accordion/index';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('<Accordion />', () => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import GameBoard from '../index';
-import getAllEntities from '../../../repositories/entities-repository';
+import GameBoard from '../../../js/components/game-board/index';
+import getAllEntities from '../../../js/repositories/entities-repository';
 
-jest.mock('../../../repositories/entities-repository');
+jest.mock('../../../js/repositories/entities-repository');
 
 describe('<GameBoard />', () => {
   afterEach(cleanup);

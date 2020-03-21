@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
-import SectionHeader from '../section-header';
+import SectionHeader from '../../../js/components/accordion/section-header';
 import '@testing-library/jest-dom/extend-expect';
 
 describe('<SectionHeader />', () => {
